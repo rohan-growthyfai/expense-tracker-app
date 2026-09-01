@@ -1,0 +1,226 @@
+/* ------------------------------------------------------------------ */
+/* Landing hero                                                        */
+/* Overrides the base hero rules in style.css for the landing page.    */
+/* ------------------------------------------------------------------ */
+
+.hero {
+    display: block;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 4rem 2rem 5rem;
+    text-align: center;
+}
+
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Badge --------------------------------------------------------------- */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #d9f2e4;
+    color: #1a1a1a;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #16a163;
+    flex-shrink: 0;
+}
+
+/* Title --------------------------------------------------------------- */
+
+.hero-title {
+    font-family: var(--font-body);
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #111111;
+    margin-bottom: 1.75rem;
+}
+
+.hero-title-accent { color: #16a163; }
+
+/* Subtitle ------------------------------------------------------------ */
+
+.hero-subtitle {
+    font-size: 1.0625rem;
+    color: #5c6672;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Buttons ------------------------------------------------------------- */
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #111111;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hero-btn:hover { background: #2d2d2d; }
+
+/* App window ---------------------------------------------------------- */
+
+.hero-visual {
+    display: block;
+    width: 100%;
+}
+
+.app-window {
+    background: #f7f7f5;
+    border: 1px solid #e8e6e1;
+    border-radius: 16px;
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.app-window-bar {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem 1.25rem;
+}
+
+.app-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.app-dot-red { background: #f0817d; }
+.app-dot-yellow { background: #f5c26b; }
+.app-dot-green { background: #7ed3a8; }
+
+/* Stat tiles ---------------------------------------------------------- */
+
+.app-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.app-stat {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #eceae5;
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.app-stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.4rem;
+}
+
+.app-stat-value {
+    font-family: var(--font-body);
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #111111;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+
+.app-stat-note {
+    font-size: 0.8125rem;
+    color: #9aa1ab;
+}
+
+.app-stat-note-up { color: #e05252; }
+.app-stat-note-good { color: #16a163; }
+
+/* Category bars ------------------------------------------------------- */
+
+.app-bars {
+    background: #ffffff;
+    border: 1px solid #eceae5;
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+}
+
+.app-bar-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app-bar-label {
+    font-size: 0.875rem;
+    color: #4b5563;
+    text-align: right;
+}
+
+.app-bar-track {
+    height: 9px;
+    background: #eeece7;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.app-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.app-bar-food { background: #e8991f; }
+.app-bar-travel { background: #2f7fd1; }
+.app-bar-bills { background: #7c5cd6; }
+
+/* Responsive ---------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    /* Base stylesheet hides the hero visual below 900px; keep it visible. */
+    .hero-visual { display: block; }
+}
+
+@media (max-width: 700px) {
+    .app-stats { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 2.5rem 1rem 3rem; }
+    .hero-actions { gap: 0.75rem; }
+    .hero-btn { padding: 0.8rem 1.4rem; }
+    .app-bar-row { grid-template-columns: 56px 1fr; gap: 0.75rem; }
+}
